@@ -1,6 +1,3 @@
-" used by Powerline; remove if Powerline is not installed
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-
 set nocompatible	" seems to allow some plugins to work 
 set number			" show line numbers
 set tabstop=4		" show tabs as four spaces
@@ -16,5 +13,16 @@ set listchars=eol:●,tab:⁘▸,trail:⎕,extends:>,precedes:<
 " needed to actually show the characters defined in the previous lines
 set list
 
-" macro to show 
+" macro to show cursorline if you press F4, can toggle at will 
 nnoremap <silent> <F4> :set cursorline!<CR>
+
+set autoindent		" autoindenting code
+
+" make backspace work as expected, allowing backspace to delete past indentations, line breaks, and insert start points
+set backspace=indent,eol,start
+
+" fix issue where using vim inside tmux wasn't showing colors correctly
+set t_Co=256
+
+" used by Powerline; remove if Powerline is not installed
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/

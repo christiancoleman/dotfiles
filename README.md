@@ -8,5 +8,5 @@ help from https://www.digitalocean.com/community/tutorials/how-to-use-git-to-man
 
 where they suggest,
 
-ln -s .vimrc ~/
-ln -s .tmux.conf ~/
+(in dotfiles directory)
+ln -s .vimrc ~/ && ln -s .tmux.conf ~/
