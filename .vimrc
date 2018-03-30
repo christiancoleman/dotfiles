@@ -35,6 +35,9 @@ set scrolloff=5
 " fix issue where using vim inside tmux wasn't showing colors correctly
 set t_Co=256
 
+" set Enter and Shift-Enter to add lines before and after current cursor
+map <Enter> :normal o<CR>
+
 " used by Powerline; remove if Powerline is not installed
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 
