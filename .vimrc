@@ -38,6 +38,10 @@ set t_Co=256
 " set Enter and Shift-Enter to add lines before and after current cursor
 map <Enter> :normal o<CR>
 
+" tell vim there are no escape keys. prevents delay between insert mode and
+" normal mode when pressing Escape
+set noesckeys
+
 " used by Powerline; remove if Powerline is not installed
 set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 
