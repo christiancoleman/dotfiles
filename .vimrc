@@ -1,10 +1,8 @@
-set nocompatible	" seems to allow some plugins to work 
 set number			" show line numbers
 set tabstop=4		" show tabs as four spaces
 set shiftwidth=4	" how many columns are spaced when using >> or <<
 set hlsearch		" highlight all search matches
 set incsearch		" start highlighting matches as soon you start typing
-set wildmenu		" when you press tab it'll show a list of commands available to you
 set showmatch		" if you highlight a ( it'll show the matching )
 syntax on			" allows syntax highlighting
 filetype indent plugin on	" load the appropriate filetype plugin depending on filetype
@@ -36,7 +34,10 @@ set scrolloff=5
 set t_Co=256
 
 " set Enter and Shift-Enter to add lines before and after current cursor
-map <Enter> :normal o<CR>
+" map <Enter> :normal o<CR>
+
+" Press Ctrl+j to insert a carriage return in the middle of a line
+nnoremap <NL> i<CR><ESC>
 
 " tell vim there are no escape keys. prevents delay between insert mode and
 " normal mode when pressing Escape
@@ -67,3 +68,8 @@ let g:apex_API_version="39.0"
 set autowrite " not strictly required, but without it you will be getting errors when running commands that open new buffer (e.g. :ApexQuery or :ApexExecuteAnonymous) on unsaved file
 
 let g:apex_server_timeoutSec=60*30 " allow server to wait for new connections within 30 minutesj
+
+" uses html comment styling for .component and .page file types (Salesforce)
+autocmd FileType visualforce setlocal commentstring=<!--\ %s\ -->
+
+set nocompatible	" seems to allow some plugins to work
