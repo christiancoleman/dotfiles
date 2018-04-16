@@ -15,4 +15,4 @@ ln -s .vimrc ~/ && ln -s .tmux.conf ~/
 
 To do this use the `dos2unix` program
 
-\tExample: dos2unix .tmux.conf.nodeps
+Example: dos2unix .tmux.conf.nodeps
