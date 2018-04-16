@@ -11,6 +11,8 @@ where they suggest,
 (in dotfiles directory)
 ln -s .vimrc ~/ && ln -s .tmux.conf ~/
 
-*** Sometimes it will be necessary to convert these files from having Windows-type line-endings to unix-type line-endings because of the switch between an action Linux distro and the Windows subsystem for Linux (While using git for windws)
-	To do this use the `dos2unix` program
-	Example: dos2unix .tmux.conf.nodeps
+*** Sometimes it will be necessary to convert these files from having Windows-type line-endings to unix-type line-endings because of the switch between an actual Linux distro and the Windows subsystem for Linux (While using git for windws)
+
+To do this use the `dos2unix` program
+
+\tExample: dos2unix .tmux.conf.nodeps
