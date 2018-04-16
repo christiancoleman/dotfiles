@@ -1,0 +1,65 @@
+# Set colors for tmux
+set -g default-terminal "screen-256color"
+
+# Set prefix as Ctrl+a instead of Ctrl+b
+set -g prefix C-a
+unbind C-b
+
+# set base index to 1 for windows
+set -g base-index 1
+
+# set base index to 1 for panes
+setw -g pane-base-index 1
+
+# bind <prefix> r to reload this file and make changes immediately
+bind r source-file ~/.tmux.conf \; display "config file loaded"
+
+# don't confirm when killing a pane
+unbind x
+bind x kill-pane
+
+# capital X will kill entire session
+bind X kill-session
+
+# add new bindings for making panes
+bind | split-window -h
+bind _ split-window -v
+
+# allows sending Ctrl+a to the underlying program
+bind C-a send-prefix
+
+# Set mouse mode = on; allows resizing and selecting panes by mouse
+setw -g mouse on
+
+# Keeps large history for a pane
+set -g history-limit 10000
+
+# renumber sessions  when one of them is killed
+set -g renumber-windows on
+
+# prevents delay between hitting escape and something happening
+set -sg escape-time 0
+
+# Vim style pane selection
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# Use Alt-vim keys without prefix key to switch panes
+bind -n M-h select-pane -L
+bind -n M-j select-pane -D
+bind -n M-k select-pane -U
+bind -n M-l select-pane -R
+
+# Use Alt-arrow keys without prefix key to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Resize using vim commands
+bind-key -r K resize-pane -U
+bind-key -r J resize-pane -D
+bind-key -r H resize-pane -L
+bind-key -r L resize-pane -R
